@@ -1,7 +1,7 @@
 # Mathematica_Tutorials
 Mathematica tutorials presented at Guangzhou University
 
-# Install Mathematica
+# Install Mathematica (MMA)
 
 ## Download Mathematica
 Choose one link below to download MMA
