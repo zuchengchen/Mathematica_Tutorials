@@ -1,0 +1,392 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15049,        384]
+NotebookOptionsPosition[     13318,        351]
+NotebookOutlinePosition[     13652,        366]
+CellTagsIndexPosition[     13609,        363]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+The construction and use of LISA sensitivity curves
+https://arxiv.org/abs/1803.01944\
+\>", "Title",
+ CellChangeTimes->{{3.771376336540154*^9, 
+  3.771376360350054*^9}},ExpressionUUID->"5d8b69c4-69a4-48ac-b2a9-\
+aeddaa21aad1"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Sensitivity Curves\nNote: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"L", "=", 
+    RowBox[{"2.5", "*", 
+     SuperscriptBox["10", "9"], "m"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "46ca19ea-4fd3-4657-bf03-7be6d993be96"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["f", "*"], "=", 
+    RowBox[{"19.09", "*", 
+     SuperscriptBox["10", 
+      RowBox[{"-", "3"}]], "Hz"}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "e075657c-6276-4c6c-a0eb-25cbbe85d43f"]
+}], "Chapter",
+ CellChangeTimes->{
+  3.7713764412929688`*^9, {3.771376636538019*^9, 
+   3.7713766369223347`*^9}},ExpressionUUID->"636e36d9-fcf1-4f32-b2b7-\
+beabf0d32614"],
+
+Cell[TextData[{
+ "Task01: using  eq.(10) to write ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["P", "OMS"], "(", "f", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "59737875-fef0-4584-b4c4-c706871df997"],
+ " function and plot it."
+}], "Section",
+ CellChangeTimes->{{3.771376472331311*^9, 3.771376507563159*^9}, {
+   3.771376650762233*^9, 3.77137665586605*^9}, {3.771376688601899*^9, 
+   3.7713767059857817`*^9}, {3.77137687469785*^9, 3.771376875370096*^9}, 
+   3.771377040759901*^9},ExpressionUUID->"9d24f7df-4fd7-4eee-a84e-\
+7dfda16fc075"],
+
+Cell[TextData[{
+ "Task02: using  eq.(11) to write ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["P", "acc"], "(", "f", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "3e66a471-13d3-4338-a394-adab27078c25"],
+ " function and plot it. "
+}], "Section",
+ CellChangeTimes->{{3.771376472331311*^9, 3.771376530708087*^9}, {
+   3.771376661972754*^9, 3.771376666447991*^9}, {3.7713767136282043`*^9, 
+   3.771376723569862*^9}, {3.7713768810194197`*^9, 3.7713768810195103`*^9}, 
+   3.771377038063994*^9},ExpressionUUID->"650ca470-afde-4437-8917-\
+052de6fd9253"],
+
+Cell[TextData[{
+ "Task03:using  eq.(12) to write ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["P", "n"], "(", "f", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "b254edbd-a8af-4a4e-bfd3-79b9380f5560"],
+ " function and plot it. "
+}], "Section",
+ CellChangeTimes->{{3.771376472331311*^9, 3.771376507563159*^9}, {
+  3.771376542045878*^9, 3.771376634842843*^9}, {3.771376670692357*^9, 
+  3.7713766723779297`*^9}, {3.77137672832338*^9, 3.771376744441712*^9}, {
+  3.771376883434578*^9, 3.771376883434663*^9}, {3.771377034487818*^9, 
+  3.771377035175795*^9}},ExpressionUUID->"47074c69-c100-4450-89ad-\
+71a1a5d6431a"],
+
+Cell[TextData[{
+ "Task04:using  eq.(14) to write ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["S", "c"], "(", "f", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "7d8aa30c-c995-4696-a0b3-6b2b3634b9f8"],
+ " function and plot it.\nNote: choose observation time to be 4 years."
+}], "Section",
+ CellChangeTimes->{{3.771376472331311*^9, 3.771376507563159*^9}, {
+  3.771376542045878*^9, 3.771376634842843*^9}, {3.771376670692357*^9, 
+  3.7713766723779297`*^9}, {3.77137672832338*^9, 3.771376744441712*^9}, {
+  3.771376815041399*^9, 3.771376823234234*^9}, {3.771376885723401*^9, 
+  3.771376885723488*^9}, {3.771376926176656*^9, 3.771376944632484*^9}, {
+  3.7713770261437063`*^9, 
+  3.771377027407928*^9}},ExpressionUUID->"5f43598d-3c7f-462f-bd98-\
+47a80d1cdfcb"],
+
+Cell[TextData[{
+ "Task05:using  eq.(1) to write ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["S", "n"], "(", "f", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "8a1746c8-13b5-410e-848c-ca3b54069bd5"],
+ " function and plot it. "
+}], "Section",
+ CellChangeTimes->{{3.771376472331311*^9, 3.771376507563159*^9}, {
+   3.771376542045878*^9, 3.771376634842843*^9}, {3.771376670692357*^9, 
+   3.7713766723779297`*^9}, {3.77137672832338*^9, 3.7713767631616993`*^9}, {
+   3.771376793595549*^9, 3.771376794506596*^9}, {3.771376888115147*^9, 
+   3.7713768881152363`*^9}, 3.7713769993203382`*^9, 
+   3.7713770445197773`*^9},ExpressionUUID->"4e093b23-6ef2-4a9f-874f-\
+50fa164f025c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Binary Sources", "Chapter",
+ CellChangeTimes->{
+  3.7713764412929688`*^9, {3.771376636538019*^9, 3.7713766369223347`*^9}, {
+   3.771377014802219*^9, 
+   3.771377016991865*^9}},ExpressionUUID->"1acdac5e-6593-436d-9350-\
+4f088f513a85"],
+
+Cell[TextData[{
+ "Task06:using  eq.(21) to write ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["f", "k"], "(", 
+    RowBox[{
+     SubscriptBox["m", "1"], ",", " ", 
+     SubscriptBox["m", "2"]}], ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0e822c52-7db6-439d-b809-01e17d0fa8f1"],
+ " functions with k=(0, 1, 2, 3). "
+}], "Section",
+ CellChangeTimes->{{3.771376472331311*^9, 3.771376507563159*^9}, {
+   3.771376542045878*^9, 3.771376634842843*^9}, {3.771376670692357*^9, 
+   3.7713766723779297`*^9}, {3.77137672832338*^9, 3.7713767631616993`*^9}, {
+   3.771376793595549*^9, 3.771376794506596*^9}, {3.771376888115147*^9, 
+   3.7713768881152363`*^9}, 3.7713769993203382`*^9, 3.7713770445197773`*^9, {
+   3.771377231086711*^9, 
+   3.771377317416306*^9}},ExpressionUUID->"0ef2c927-e3be-45db-b6da-\
+ffcd53eeb7e5"],
+
+Cell[TextData[{
+ "Task07:using  eq.(23) to write ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Omega]", "(", 
+    RowBox[{
+     SubscriptBox["m", "1"], ",", " ", 
+     SubscriptBox["m", "2"]}], ")"}], TraditionalForm]],ExpressionUUID->
+  "36a7504c-70db-429d-b3e1-f822f15820fe"],
+ " function. "
+}], "Section",
+ CellChangeTimes->{{3.771376472331311*^9, 3.771376507563159*^9}, {
+   3.771376542045878*^9, 3.771376634842843*^9}, {3.771376670692357*^9, 
+   3.7713766723779297`*^9}, {3.77137672832338*^9, 3.7713767631616993`*^9}, {
+   3.771376793595549*^9, 3.771376794506596*^9}, {3.771376888115147*^9, 
+   3.7713768881152363`*^9}, 3.7713769993203382`*^9, 3.7713770445197773`*^9, {
+   3.771377231086711*^9, 3.771377365045809*^9}, {3.771377397861698*^9, 
+   3.7713774422132893`*^9}, 3.7713776013644238`*^9, {3.771377631576745*^9, 
+   3.771377651379631*^9}},ExpressionUUID->"ed34a537-2dbf-4fba-a3a8-\
+2268a17979a8"],
+
+Cell[TextData[{
+ "Task08:using  eq.(22) to write \[ScriptCapitalL](f, ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["f", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "33c71200-7758-4673-9081-b9873296e51b"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["f", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "6c7fcbe5-f9a2-4a56-9c32-0e9413b8662d"],
+ ") function. "
+}], "Section",
+ CellChangeTimes->{{3.771376472331311*^9, 3.771376507563159*^9}, {
+   3.771376542045878*^9, 3.771376634842843*^9}, {3.771376670692357*^9, 
+   3.7713766723779297`*^9}, {3.77137672832338*^9, 3.7713767631616993`*^9}, {
+   3.771376793595549*^9, 3.771376794506596*^9}, {3.771376888115147*^9, 
+   3.7713768881152363`*^9}, 3.7713769993203382`*^9, 3.7713770445197773`*^9, {
+   3.771377231086711*^9, 3.771377365045809*^9}, {3.771377397861698*^9, 
+   3.7713774422132893`*^9}, {3.771377655502631*^9, 
+   3.771377682947946*^9}},ExpressionUUID->"9e05d8de-4d41-488d-8ebc-\
+dbc6e1c4c1b4"],
+
+Cell[TextData[{
+ "Task09:using  eq.(20) to write A(f, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["m", "1"], ",", " ", 
+    SubscriptBox["m", "2"]}], TraditionalForm]],ExpressionUUID->
+  "c94ecd53-9f94-4456-ae04-84e8411be350"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["D", "L"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "fe48d18b-0f70-4e48-8529-6aedb9a7c6ab"],
+ ") function. "
+}], "Section",
+ CellChangeTimes->{{3.771376472331311*^9, 3.771376507563159*^9}, {
+   3.771376542045878*^9, 3.771376634842843*^9}, {3.771376670692357*^9, 
+   3.7713766723779297`*^9}, {3.77137672832338*^9, 3.7713767631616993`*^9}, {
+   3.771376793595549*^9, 3.771376794506596*^9}, {3.771376888115147*^9, 
+   3.7713768881152363`*^9}, 3.7713769993203382`*^9, 3.7713770445197773`*^9, {
+   3.771377231086711*^9, 3.771377365045809*^9}, {3.771377397861698*^9, 
+   3.771377469349402*^9}, {3.771377563889279*^9, 3.7713775723094263`*^9}, {
+   3.771377657763844*^9, 
+   3.771377684899884*^9}},ExpressionUUID->"bc6be638-5ebe-470d-952b-\
+267dfbacd196"],
+
+Cell[TextData[{
+ "Task10:using  eqs. (1.1), (1.2) and (1.3) of \
+https://arxiv.org/pdf/1111.6396 to write ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["D", "L"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "74b9abb3-7015-4368-9c39-227735e795c2"],
+ "(z) function. \nWe set\nC = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"2.99792458", "*", 
+    SuperscriptBox["10", "8"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "5f8a119b-6e6d-4e8b-a4ed-168ce2597324"],
+ " m/s\n",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["\[CapitalOmega]", "m"], "=", "0.286"}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "0ab621e4-ad25-4a5d-9ae4-3592d563e9d1"],
+ "\nH0=69.6 km/s/Mpc\n1Mpc = 3.08567758 \[Times] ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["10", "16"], "*", 
+    SuperscriptBox["10", "6"]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "d15d5bec-93ec-44a1-a6c1-762d32339fe5"],
+ "m"
+}], "Section",
+ CellChangeTimes->{{3.771376472331311*^9, 3.771376507563159*^9}, {
+   3.771376542045878*^9, 3.771376634842843*^9}, {3.771376670692357*^9, 
+   3.7713766723779297`*^9}, {3.77137672832338*^9, 3.7713767631616993`*^9}, {
+   3.771376793595549*^9, 3.771376794506596*^9}, {3.771376888115147*^9, 
+   3.7713768881152363`*^9}, 3.7713769993203382`*^9, 3.7713770445197773`*^9, {
+   3.771377231086711*^9, 3.771377365045809*^9}, {3.771377397861698*^9, 
+   3.771377469349402*^9}, {3.771377563889279*^9, 3.7713775723094263`*^9}, {
+   3.771377657763844*^9, 3.771377684899884*^9}, {3.7713782304803257`*^9, 
+   3.77137828185634*^9}, {3.771378321775708*^9, 3.771378349759561*^9}, {
+   3.771378541991157*^9, 3.771378586821952*^9}, {3.771378740764703*^9, 
+   3.771378749172995*^9}, {3.771378802764181*^9, 3.771378816093649*^9}, {
+   3.7713788922362127`*^9, 3.771378945220961*^9}, {3.771379487232995*^9, 
+   3.7713794874083147`*^9}},ExpressionUUID->"1dad3779-33ba-4c11-b8f3-\
+c22d8eede48f"],
+
+Cell[TextData[{
+ "Task11:using  eq.(19) to write ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["S", "h"], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "adaa2f79-5232-4176-a08b-af5cfe3a9297"],
+ "(f, ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["m", "1"], ",", " ", 
+    SubscriptBox["m", "2"]}], TraditionalForm]],ExpressionUUID->
+  "1f84841a-40f7-420b-91a7-8770b5538c9e"],
+ ", z) function. "
+}], "Section",
+ CellChangeTimes->{{3.771376472331311*^9, 3.771376507563159*^9}, {
+   3.771376542045878*^9, 3.771376634842843*^9}, {3.771376670692357*^9, 
+   3.7713766723779297`*^9}, {3.77137672832338*^9, 3.7713767631616993`*^9}, {
+   3.771376793595549*^9, 3.771376794506596*^9}, {3.771376888115147*^9, 
+   3.7713768881152363`*^9}, 3.7713769993203382`*^9, 3.7713770445197773`*^9, {
+   3.771377231086711*^9, 3.771377365045809*^9}, {3.771377397861698*^9, 
+   3.771377469349402*^9}, {3.771377563889279*^9, 3.7713775723094263`*^9}, {
+   3.771377657763844*^9, 3.771377684899884*^9}, {3.771379502752346*^9, 
+   3.771379519711915*^9}},ExpressionUUID->"6077211e-e491-4ba0-ba95-\
+656b1166ff62"],
+
+Cell[TextData[{
+ "Task12:using  eq.(18) to averaged SNR for a binary source with ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["m", "1"], "=", 
+    RowBox[{
+     SubscriptBox["m", "2"], "=", 
+     RowBox[{
+      SuperscriptBox["10", "6"], 
+      SubscriptBox["M", "sun"]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm",ExpressionUUID->
+  "eb3c8a87-ce56-4815-a61e-34f20f594cc3"],
+ "and z=3. "
+}], "Section",
+ CellChangeTimes->{{3.771376472331311*^9, 3.771376507563159*^9}, {
+   3.771376542045878*^9, 3.771376634842843*^9}, {3.771376670692357*^9, 
+   3.7713766723779297`*^9}, {3.77137672832338*^9, 3.7713767631616993`*^9}, {
+   3.771376793595549*^9, 3.771376794506596*^9}, {3.771376888115147*^9, 
+   3.7713768881152363`*^9}, 3.7713769993203382`*^9, 3.7713770445197773`*^9, {
+   3.771377231086711*^9, 3.771377365045809*^9}, {3.771377397861698*^9, 
+   3.771377469349402*^9}, {3.771377563889279*^9, 3.7713775723094263`*^9}, {
+   3.771377657763844*^9, 3.771377684899884*^9}, {3.771379502752346*^9, 
+   3.771379519711915*^9}, {3.771379890973722*^9, 
+   3.771379970845043*^9}},ExpressionUUID->"5c3080fd-f479-4bcb-a4af-\
+d75ebe5efc7d"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{956, 1041},
+WindowMargins->{{Automatic, 2}, {Automatic, 18}},
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 235, 6, 225, "Title",ExpressionUUID->"5d8b69c4-69a4-48ac-b2a9-aeddaa21aad1"],
+Cell[CellGroupData[{
+Cell[840, 32, 722, 23, 119, "Chapter",ExpressionUUID->"636e36d9-fcf1-4f32-b2b7-beabf0d32614"],
+Cell[1565, 57, 584, 14, 68, "Section",ExpressionUUID->"9d24f7df-4fd7-4eee-a84e-7dfda16fc075"],
+Cell[2152, 73, 591, 14, 54, "Section",ExpressionUUID->"650ca470-afde-4437-8917-052de6fd9253"],
+Cell[2746, 89, 653, 15, 54, "Section",ExpressionUUID->"47074c69-c100-4450-89ad-71a1a5d6431a"],
+Cell[3402, 106, 798, 17, 93, "Section",ExpressionUUID->"5f43598d-3c7f-462f-bd98-47a80d1cdfcb"],
+Cell[4203, 125, 712, 16, 54, "Section",ExpressionUUID->"4e093b23-6ef2-4a9f-874f-50fa164f025c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4952, 146, 239, 5, 70, "Chapter",ExpressionUUID->"1acdac5e-6593-436d-9350-4f088f513a85"],
+Cell[5194, 153, 852, 20, 68, "Section",ExpressionUUID->"0ef2c927-e3be-45db-b6da-ffcd53eeb7e5"],
+Cell[6049, 175, 903, 19, 54, "Section",ExpressionUUID->"ed34a537-2dbf-4fba-a3a8-2268a17979a8"],
+Cell[6955, 196, 1012, 23, 54, "Section",ExpressionUUID->"9e05d8de-4d41-488d-8ebc-dbc6e1c4c1b4"],
+Cell[7970, 221, 1067, 25, 54, "Section",ExpressionUUID->"bc6be638-5ebe-470d-952b-267dfbacd196"],
+Cell[9040, 248, 1983, 45, 286, "Section",ExpressionUUID->"1dad3779-33ba-4c11-b8f3-c22d8eede48f"],
+Cell[11026, 295, 1113, 25, 54, "Section",ExpressionUUID->"6077211e-e491-4ba0-ba95-656b1166ff62"],
+Cell[12142, 322, 1148, 25, 93, "Section",ExpressionUUID->"5c3080fd-f479-4bcb-a4af-d75ebe5efc7d"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+

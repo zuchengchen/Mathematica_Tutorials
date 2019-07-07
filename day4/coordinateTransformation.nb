@@ -1,0 +1,948 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.4' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28116,        938]
+NotebookOptionsPosition[     26416,        879]
+NotebookOutlinePosition[     26761,        894]
+CellTagsIndexPosition[     26718,        891]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"<<", "xAct`xTerior`"}]], "Input",
+ CellChangeTimes->{{3.6766143268603053`*^9, 3.676614328954025*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.6766143928328137`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xPerm`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.2.3\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2015", ",", "8", ",", "23"}], "}"}]}],
+  SequenceForm["Package xAct`xPerm`  version ", "1.2.3", ", ", {2015, 8, 23}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6766143928328137`*^9}],
+
+Cell[BoxData["\<\"CopyRight (C) 2003-2015, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print",
+ CellChangeTimes->{3.6766143928484364`*^9}],
+
+Cell[BoxData["\<\"Connecting to external MinGW executable...\"\>"], "Print",
+ CellChangeTimes->{3.6766143930515614`*^9}],
+
+Cell[BoxData["\<\"Connection established.\"\>"], "Print",
+ CellChangeTimes->{3.6766143931765614`*^9}],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.6766143931765614`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xTensor`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.1.2\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2015", ",", "8", ",", "23"}], "}"}]}],
+  SequenceForm[
+  "Package xAct`xTensor`  version ", "1.1.2", ", ", {2015, 8, 23}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.6766143931921873`*^9}],
+
+Cell[BoxData["\<\"CopyRight (C) 2002-2015, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print",
+ CellChangeTimes->{3.6766143932078133`*^9}],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.6766143939734464`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xCoba`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"0.8.3\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2015", ",", "8", ",", "23"}], "}"}]}],
+  SequenceForm["Package xAct`xCoba`  version ", "0.8.3", ", ", {2015, 8, 23}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676614393989066*^9}],
+
+Cell[BoxData["\<\"CopyRight (C) 2005-2014, David Yllanes and Jose M. \
+Martin-Garcia, under the General Public License.\"\>"], "Print",
+ CellChangeTimes->{3.6766143940046897`*^9}],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.676614394692192*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xTerior`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"0.9.0\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2015", ",", "8", ",", "23"}], "}"}]}],
+  SequenceForm[
+  "Package xAct`xTerior`  version ", "0.9.0", ", ", {2015, 8, 23}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.676614394707818*^9}],
+
+Cell[BoxData["\<\"CopyRight (C) 2013, Alfonso Garcia-Parrado Gomez-Lobo and \
+Leo C. Stein, under the General Public License.\"\>"], "Print",
+ CellChangeTimes->{3.6766143947234426`*^9}],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.676614394739067*^9}],
+
+Cell[BoxData["\<\"These packages come with ABSOLUTELY NO WARRANTY; for \
+details type Disclaimer[]. This is free software, and you are welcome to \
+redistribute it under certain conditions. See the General Public License for \
+details.\"\>"], "Print",
+ CellChangeTimes->{3.676614394739067*^9}],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.676614394754693*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"$DefInfoQ", "=", "False"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"$UndefInfoQ", "=", "False"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"$CVVerbose", "=", "False"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.6766143397077255`*^9, 3.676614340160774*^9}}],
+
+Cell[BoxData[{
+ RowBox[{"DefManifold", "[", 
+  RowBox[{"M3", ",", "3", ",", 
+   RowBox[{"{", 
+    RowBox[{"a", ",", "b", ",", "c", ",", "d", ",", "f", ",", "g"}], "}"}]}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{"DefChart", "[", 
+  RowBox[{"Ec", ",", "M3", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "[", "]"}], ",", 
+     RowBox[{"y", "[", "]"}], ",", 
+     RowBox[{"z", "[", "]"}]}], "}"}]}], "]"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell["Change of coordinates", "Section",
+ CellChangeTimes->{{3.622131129218543*^9, 3.622131134008312*^9}, {
+  3.6221312385786467`*^9, 3.622131241527803*^9}, {3.622286326241395*^9, 
+  3.6222863314452457`*^9}}],
+
+Cell["Let us introduce a new coordinate system", "Text",
+ CellChangeTimes->{{3.62228633759956*^9, 3.6222863565585814`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"DefChart", "[", 
+  RowBox[{"Sp", ",", "M3", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"r", "[", "]"}], ",", 
+     RowBox[{"\[Theta]", "[", "]"}], ",", 
+     RowBox[{"\[Zeta]", "[", "]"}]}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.6222863974139357`*^9, 3.6222864460050287`*^9}}],
+
+Cell["The relation between the new and the old coordinates is", "Text",
+ CellChangeTimes->{{3.6222864533102417`*^9, 3.622286463433012*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"EcToSp", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "[", "]"}], "\[Rule]", 
+     RowBox[{
+      RowBox[{"r", "[", "]"}], 
+      RowBox[{"Sin", "[", 
+       RowBox[{"\[Theta]", "[", "]"}], "]"}], 
+      RowBox[{"Cos", "[", 
+       RowBox[{"\[Zeta]", "[", "]"}], "]"}]}]}], ",", 
+    RowBox[{
+     RowBox[{"y", "[", "]"}], "\[Rule]", 
+     RowBox[{
+      RowBox[{"r", "[", "]"}], 
+      RowBox[{"Sin", "[", 
+       RowBox[{"\[Theta]", "[", "]"}], "]"}], 
+      RowBox[{"Sin", "[", 
+       RowBox[{"\[Zeta]", "[", "]"}], "]"}]}]}], ",", 
+    RowBox[{
+     RowBox[{"z", "[", "]"}], "\[Rule]", 
+     RowBox[{
+      RowBox[{"r", "[", "]"}], 
+      RowBox[{"Cos", "[", 
+       RowBox[{"\[Theta]", "[", "]"}], "]"}]}]}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.622286470592648*^9, 3.622286549536903*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    InterpretationBox[
+     StyleBox["x",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`x[],
+     Editable->False], "\[Rule]", 
+    RowBox[{
+     RowBox[{
+      InterpretationBox[
+       StyleBox["Cos",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       Cos,
+       Editable->False], "[", 
+      InterpretationBox[
+       StyleBox["\[Zeta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`\[Zeta][],
+       Editable->False], "]"}], " ", 
+     InterpretationBox[
+      StyleBox["r",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`r[],
+      Editable->False], " ", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox["Sin",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       Sin,
+       Editable->False], "[", 
+      InterpretationBox[
+       StyleBox["\[Theta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`\[Theta][],
+       Editable->False], "]"}]}]}], ",", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox["y",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`y[],
+     Editable->False], "\[Rule]", 
+    RowBox[{
+     InterpretationBox[
+      StyleBox["r",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`r[],
+      Editable->False], " ", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox["Sin",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       Sin,
+       Editable->False], "[", 
+      InterpretationBox[
+       StyleBox["\[Zeta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`\[Zeta][],
+       Editable->False], "]"}], " ", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox["Sin",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       Sin,
+       Editable->False], "[", 
+      InterpretationBox[
+       StyleBox["\[Theta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`\[Theta][],
+       Editable->False], "]"}]}]}], ",", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox["z",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`z[],
+     Editable->False], "\[Rule]", 
+    RowBox[{
+     RowBox[{
+      InterpretationBox[
+       StyleBox["Cos",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       Cos,
+       Editable->False], "[", 
+      InterpretationBox[
+       StyleBox["\[Theta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`\[Theta][],
+       Editable->False], "]"}], " ", 
+     InterpretationBox[
+      StyleBox["r",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`r[],
+      Editable->False]}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.625428021599907*^9, 3.6254336275900507`*^9, 
+  3.625434758753442*^9, 3.625435273311688*^9, 3.625435500037631*^9, 
+  3.625436028146449*^9, 3.6254869852689543`*^9, 3.6262767923159513`*^9, 
+  3.626292666435629*^9, 3.626351722684209*^9, 3.626381422867654*^9, 
+  3.6263895001791353`*^9, 3.6264366240544577`*^9, 3.626438269187649*^9, 
+  3.627705688137076*^9, 3.62770792206077*^9, 3.627715365073777*^9, 
+  3.627721577808689*^9, 3.639046595735839*^9, 3.648615862092293*^9, 
+  3.6766138082418613`*^9, 3.676614396207823*^9}]
+}, Open  ]],
+
+Cell["\<\
+This enables us to write any differential form in the new coordinates. For \
+example:\
+\>", "Text",
+ CellChangeTimes->{{3.622286554670261*^9, 3.6222865683771544`*^9}, {
+  3.622371626843542*^9, 3.6223716303327417`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[Omega]", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Diff", "[", 
+     RowBox[{"x", "[", "]"}], "]"}], "*", 
+    RowBox[{"Diff", "[", 
+     RowBox[{"x", "[", "]"}], "]"}]}], "+", 
+   RowBox[{
+    RowBox[{"Diff", "[", 
+     RowBox[{"y", "[", "]"}], "]"}], "*", 
+    RowBox[{"Diff", "[", 
+     RowBox[{"y", "[", "]"}], "]"}]}], "+", 
+   RowBox[{
+    RowBox[{"Diff", "[", 
+     RowBox[{"z", "[", "]"}], "]"}], "*", 
+    RowBox[{"Diff", "[", 
+     RowBox[{"z", "[", "]"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.62275330587599*^9, 3.622753306164504*^9}, {
+  3.67661392098096*^9, 3.6766139449028263`*^9}, {3.6766139767310514`*^9, 
+  3.6766140481093717`*^9}, {3.676614112140876*^9, 3.6766141546097302`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox[
+   InterpretationBox[
+    StyleBox[
+     RowBox[{"d", "[", 
+      InterpretationBox[
+       StyleBox["x",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`x[],
+       Editable->False], "]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    xAct`xTerior`Diff[
+     $CellContext`x[], xAct`xTensor`PD],
+    Editable->False], "2"], "+", 
+  SuperscriptBox[
+   InterpretationBox[
+    StyleBox[
+     RowBox[{"d", "[", 
+      InterpretationBox[
+       StyleBox["y",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`y[],
+       Editable->False], "]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    xAct`xTerior`Diff[
+     $CellContext`y[], xAct`xTensor`PD],
+    Editable->False], "2"], "+", 
+  SuperscriptBox[
+   InterpretationBox[
+    StyleBox[
+     RowBox[{"d", "[", 
+      InterpretationBox[
+       StyleBox["z",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`z[],
+       Editable->False], "]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    xAct`xTerior`Diff[
+     $CellContext`z[], xAct`xTensor`PD],
+    Editable->False], "2"]}]], "Output",
+ CellChangeTimes->{
+  3.676613954574729*^9, 3.676613993684227*^9, {3.676614026468641*^9, 
+   3.676614049546838*^9}, {3.676614114203312*^9, 3.6766141556565723`*^9}, 
+   3.676614396285948*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[Omega]", "/.", "EcToSp"}]], "Input",
+ CellChangeTimes->{{3.6222865704080753`*^9, 3.622286580874198*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       InterpretationBox[
+        StyleBox["Cos",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        Cos,
+        Editable->False], "[", 
+       InterpretationBox[
+        StyleBox["\[Theta]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Theta][],
+        Editable->False], "]"}], " ", 
+      InterpretationBox[
+       StyleBox[
+        RowBox[{"d", "[", 
+         InterpretationBox[
+          StyleBox["r",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`r[],
+          Editable->False], "]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       xAct`xTerior`Diff[
+        $CellContext`r[], xAct`xTensor`PD],
+       Editable->False]}], "-", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox[
+        RowBox[{"d", "[", 
+         InterpretationBox[
+          StyleBox["\[Theta]",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`\[Theta][],
+          Editable->False], "]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       xAct`xTerior`Diff[
+        $CellContext`\[Theta][], xAct`xTensor`PD],
+       Editable->False], " ", 
+      InterpretationBox[
+       StyleBox["r",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`r[],
+       Editable->False], " ", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["Sin",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        Sin,
+        Editable->False], "[", 
+       InterpretationBox[
+        StyleBox["\[Theta]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Theta][],
+        Editable->False], "]"}]}]}], ")"}], "2"], "+", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       InterpretationBox[
+        StyleBox["Cos",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        Cos,
+        Editable->False], "[", 
+       InterpretationBox[
+        StyleBox["\[Theta]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Theta][],
+        Editable->False], "]"}], " ", 
+      InterpretationBox[
+       StyleBox[
+        RowBox[{"d", "[", 
+         InterpretationBox[
+          StyleBox["\[Theta]",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`\[Theta][],
+          Editable->False], "]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       xAct`xTerior`Diff[
+        $CellContext`\[Theta][], xAct`xTensor`PD],
+       Editable->False], " ", 
+      InterpretationBox[
+       StyleBox["r",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`r[],
+       Editable->False], " ", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["Sin",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        Sin,
+        Editable->False], "[", 
+       InterpretationBox[
+        StyleBox["\[Zeta]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Zeta][],
+        Editable->False], "]"}]}], "+", 
+     RowBox[{
+      RowBox[{
+       InterpretationBox[
+        StyleBox["Cos",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        Cos,
+        Editable->False], "[", 
+       InterpretationBox[
+        StyleBox["\[Zeta]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Zeta][],
+        Editable->False], "]"}], " ", 
+      InterpretationBox[
+       StyleBox[
+        RowBox[{"d", "[", 
+         InterpretationBox[
+          StyleBox["\[Zeta]",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`\[Zeta][],
+          Editable->False], "]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       xAct`xTerior`Diff[
+        $CellContext`\[Zeta][], xAct`xTensor`PD],
+       Editable->False], " ", 
+      InterpretationBox[
+       StyleBox["r",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`r[],
+       Editable->False], " ", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["Sin",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        Sin,
+        Editable->False], "[", 
+       InterpretationBox[
+        StyleBox["\[Theta]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Theta][],
+        Editable->False], "]"}]}], "+", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox[
+        RowBox[{"d", "[", 
+         InterpretationBox[
+          StyleBox["r",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`r[],
+          Editable->False], "]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       xAct`xTerior`Diff[
+        $CellContext`r[], xAct`xTensor`PD],
+       Editable->False], " ", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["Sin",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        Sin,
+        Editable->False], "[", 
+       InterpretationBox[
+        StyleBox["\[Zeta]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Zeta][],
+        Editable->False], "]"}], " ", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["Sin",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        Sin,
+        Editable->False], "[", 
+       InterpretationBox[
+        StyleBox["\[Theta]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Theta][],
+        Editable->False], "]"}]}]}], ")"}], "2"], "+", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       InterpretationBox[
+        StyleBox["Cos",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        Cos,
+        Editable->False], "[", 
+       InterpretationBox[
+        StyleBox["\[Zeta]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Zeta][],
+        Editable->False], "]"}], " ", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["Cos",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        Cos,
+        Editable->False], "[", 
+       InterpretationBox[
+        StyleBox["\[Theta]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Theta][],
+        Editable->False], "]"}], " ", 
+      InterpretationBox[
+       StyleBox[
+        RowBox[{"d", "[", 
+         InterpretationBox[
+          StyleBox["\[Theta]",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`\[Theta][],
+          Editable->False], "]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       xAct`xTerior`Diff[
+        $CellContext`\[Theta][], xAct`xTensor`PD],
+       Editable->False], " ", 
+      InterpretationBox[
+       StyleBox["r",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`r[],
+       Editable->False]}], "+", 
+     RowBox[{
+      RowBox[{
+       InterpretationBox[
+        StyleBox["Cos",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        Cos,
+        Editable->False], "[", 
+       InterpretationBox[
+        StyleBox["\[Zeta]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Zeta][],
+        Editable->False], "]"}], " ", 
+      InterpretationBox[
+       StyleBox[
+        RowBox[{"d", "[", 
+         InterpretationBox[
+          StyleBox["r",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`r[],
+          Editable->False], "]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       xAct`xTerior`Diff[
+        $CellContext`r[], xAct`xTensor`PD],
+       Editable->False], " ", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["Sin",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        Sin,
+        Editable->False], "[", 
+       InterpretationBox[
+        StyleBox["\[Theta]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Theta][],
+        Editable->False], "]"}]}], "-", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox[
+        RowBox[{"d", "[", 
+         InterpretationBox[
+          StyleBox["\[Zeta]",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`\[Zeta][],
+          Editable->False], "]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       xAct`xTerior`Diff[
+        $CellContext`\[Zeta][], xAct`xTensor`PD],
+       Editable->False], " ", 
+      InterpretationBox[
+       StyleBox["r",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`r[],
+       Editable->False], " ", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["Sin",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        Sin,
+        Editable->False], "[", 
+       InterpretationBox[
+        StyleBox["\[Zeta]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Zeta][],
+        Editable->False], "]"}], " ", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["Sin",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        Sin,
+        Editable->False], "[", 
+       InterpretationBox[
+        StyleBox["\[Theta]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Theta][],
+        Editable->False], "]"}]}]}], ")"}], "2"]}]], "Output",
+ CellChangeTimes->{
+  3.625428037490097*^9, 3.62543362791988*^9, 3.6254347589743757`*^9, 
+   3.625435273628264*^9, 3.625435500410707*^9, 3.625436028448524*^9, 
+   3.625486994650214*^9, 3.626276792535797*^9, 3.626292666737369*^9, 
+   3.626351722974793*^9, 3.626381423318061*^9, 3.626389500388713*^9, 
+   3.626436624337439*^9, 3.6264382693477583`*^9, 3.6277056945074253`*^9, 
+   3.6277079222162523`*^9, 3.627715387611907*^9, 3.627721578030244*^9, 
+   3.63904659870752*^9, 3.648615865485304*^9, 3.676613835616949*^9, 
+   3.6766139622622538`*^9, 3.6766139958873596`*^9, {3.676614028874898*^9, 
+   3.6766140517812204`*^9}, {3.676614117015803*^9, 3.6766141581565804`*^9}, 
+   3.676614235625552*^9, 3.6766143963484488`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"Simplification", "@", "%"}], ")"}], "//", 
+   RowBox[{
+    RowBox[{"Map", "[", 
+     RowBox[{"NoScalar", ",", "#", ",", "All"}], "]"}], "&"}]}], "//", 
+  "Expand"}]], "Input",
+ CellChangeTimes->{{3.622286590009911*^9, 3.622286597807805*^9}, {
+  3.676614167719174*^9, 3.6766142462818356`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox[
+   InterpretationBox[
+    StyleBox[
+     RowBox[{"d", "[", 
+      InterpretationBox[
+       StyleBox["r",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`r[],
+       Editable->False], "]"}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    xAct`xTerior`Diff[
+     $CellContext`r[], xAct`xTensor`PD],
+    Editable->False], "2"], "+", 
+  RowBox[{
+   SuperscriptBox[
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"d", "[", 
+       InterpretationBox[
+        StyleBox["\[Theta]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Theta][],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     xAct`xTerior`Diff[
+      $CellContext`\[Theta][], xAct`xTensor`PD],
+     Editable->False], "2"], " ", 
+   SuperscriptBox[
+    InterpretationBox[
+     StyleBox["r",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`r[],
+     Editable->False], "2"]}], "+", 
+  RowBox[{
+   SuperscriptBox[
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"d", "[", 
+       InterpretationBox[
+        StyleBox["\[Zeta]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Zeta][],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     xAct`xTerior`Diff[
+      $CellContext`\[Zeta][], xAct`xTensor`PD],
+     Editable->False], "2"], " ", 
+   SuperscriptBox[
+    InterpretationBox[
+     StyleBox["r",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`r[],
+     Editable->False], "2"], " ", 
+   SuperscriptBox[
+    RowBox[{
+     InterpretationBox[
+      StyleBox["Sin",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      Sin,
+      Editable->False], "[", 
+     InterpretationBox[
+      StyleBox["\[Theta]",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`\[Theta][],
+      Editable->False], "]"}], "2"]}]}]], "Output",
+ CellChangeTimes->{
+  3.625428042197448*^9, 3.625433628756878*^9, 3.625434759670546*^9, 
+   3.625435274345261*^9, 3.625435501324617*^9, 3.625436029259848*^9, 
+   3.625486997715419*^9, 3.626276793880554*^9, 3.6262926679390287`*^9, 
+   3.6263517244247293`*^9, 3.626381424915843*^9, 3.626389501615163*^9, 
+   3.626436625795517*^9, 3.6264382706770687`*^9, 3.627705696367141*^9, 
+   3.627707922953082*^9, 3.627715395529112*^9, 3.62772157874999*^9, 
+   3.6390466008293953`*^9, 3.6486158675635757`*^9, 3.676613855507657*^9, {
+   3.6766140033279443`*^9, 3.676614055000004*^9}, {3.67661413526588*^9, 
+   3.6766141605628138`*^9}, {3.676614198125435*^9, 3.6766142467037125`*^9}, 
+   3.6766143967390947`*^9}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1350, 695},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.4 for Microsoft Windows (64-bit) (February 25, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 125, 2, 31, "Input"],
+Cell[CellGroupData[{
+Cell[730, 28, 140, 2, 23, "Print"],
+Cell[873, 32, 409, 9, 23, "Print"],
+Cell[1285, 43, 161, 2, 23, "Print"],
+Cell[1449, 47, 120, 1, 23, "Print"],
+Cell[1572, 50, 101, 1, 23, "Print"],
+Cell[1676, 53, 140, 2, 23, "Print"],
+Cell[1819, 57, 416, 10, 23, "Print"],
+Cell[2238, 69, 161, 2, 23, "Print"],
+Cell[2402, 73, 140, 2, 23, "Print"],
+Cell[2545, 77, 407, 9, 23, "Print"],
+Cell[2955, 88, 179, 2, 23, "Print"],
+Cell[3137, 92, 138, 2, 23, "Print"],
+Cell[3278, 96, 414, 10, 23, "Print"],
+Cell[3695, 108, 185, 2, 23, "Print"],
+Cell[3883, 112, 138, 2, 23, "Print"],
+Cell[4024, 116, 293, 4, 43, "Print"],
+Cell[4320, 122, 138, 2, 23, "Print"]
+}, Open  ]]
+}, Open  ]],
+Cell[4485, 128, 312, 7, 72, "Input"],
+Cell[4800, 137, 495, 14, 52, "Input"],
+Cell[CellGroupData[{
+Cell[5320, 155, 208, 3, 70, "Section"],
+Cell[5531, 160, 123, 1, 30, "Text"],
+Cell[5657, 163, 385, 10, 31, "Input"],
+Cell[6045, 175, 139, 1, 30, "Text"],
+Cell[CellGroupData[{
+Cell[6209, 180, 845, 26, 31, "Input"],
+Cell[7057, 208, 3348, 117, 31, "Output"]
+}, Open  ]],
+Cell[10420, 328, 228, 5, 30, "Text"],
+Cell[CellGroupData[{
+Cell[10673, 337, 731, 20, 31, "Input"],
+Cell[11407, 359, 1400, 50, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12844, 414, 130, 2, 31, "Input"],
+Cell[12977, 418, 10303, 353, 31, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23317, 776, 357, 10, 31, "Input"],
+Cell[23677, 788, 2711, 87, 64, "Output"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
