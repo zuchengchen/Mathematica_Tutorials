@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <title>Mathematica 11.3</title>
+  <style type="text/css">
+    body {
+      font-family: Arial, sans-serif;
+    }
+  </style>
+  <script>    
+    function f1(n, byte, c) { // inverse of f2: f1(f2(x, y, c), c, y, c) == x
+      for (var bitIndex = 0; bitIndex <= 7; bitIndex++) {
+        var bit = (byte >> bitIndex) & 1;
+        if (bit + ((n - bit) & ~1) == n) {
+          n = (n - bit) >> 1;
+        } else {
+          n = ((c - bit) ^ n) >> 1;
+        }
+      }
+      return n;
+    }
+     
+    /*function f2(n, byte, c) {
+      for (var bitIndex = 7; bitIndex >= 0; bitIndex--) {
+        var bit = (byte >> bitIndex) & 1;
+        var tmp = (n << 1) + bit;
+        if (n & 0x8000) {
+          tmp ^= c;
+        }
+        n = tmp;
+      }
+      return n;
+    }*/
+     
+    function genPassword(str) {
+      var hash = 0xA439; 
+      for (var byteIndex = str.length - 1; byteIndex >= 0; byteIndex--) {
+        hash = f1(hash, str.charCodeAt(byteIndex), 0x105C3);
+      }
+       
+      var n1 = 0;
+      while (f1(f1(hash, n1 & 0xFF, 0x105C3), n1 >> 8, 0x105C3) != 0xA5B6) {
+        if (++n1 >= 0xFFFF) {
+          return "Error";
+        }
+      }
+       
+      n1 = Math.floor(((n1 + 0x72FA) & 0xFFFF) * 99999.0 / 0xFFFF);
+      var n1str = ("0000" + n1.toString(10)).slice(-5); // this will be used at the end
+       
+      var temp = parseInt(n1str.slice(0,-3) + n1str.slice(-2) + n1str.slice(-3, -2), 10); 
+      temp = Math.ceil((temp / 99999.0) * 0xFFFF);
+      temp = f1(f1(0, temp & 0xFF, 0x1064B), temp >> 8, 0x1064B);
+       
+      for (byteIndex = str.length - 1; byteIndex >= 0; byteIndex--) {
+        temp = f1(temp, str.charCodeAt(byteIndex), 0x1064B);
+      }
+       
+      var n2 = 0;
+      while (f1(f1(temp, n2 & 0xFF, 0x1064B), n2 >> 8, 0x1064B) != 0xA5B6) {
+        if (++n2 >= 0xFFFF) {
+          return "Error";
+        }
+      }
+       
+      n2 = Math.floor((n2 & 0xFFFF) * 99999.0 / 0xFFFF);
+      var n2str = ("0000" + n2.toString(10)).slice(-5);
+       
+      var password = n2str.charAt(3) + n1str.charAt(3) + n1str.charAt(1) + n1str.charAt(0) + "-"
+                   + n2str.charAt(4) + n1str.charAt(2) + n2str.charAt(0) + "-"      
+                   + n2str.charAt(2) + n1str.charAt(4) + n2str.charAt(1) + "::1";
+      return password;
+    }
+     
+    function genFromMathId() {
+      document.getElementById("output").innerHTML = "";
+      var mathId = document.getElementById("str").value;
+      var activationKey = document.getElementById("act").value;
+      var password = genPassword(mathId + "$1&" + activationKey);
+      document.getElementById("output").innerHTML += "Password: " + password + "</br>";
+      var a = document.createElement('a');
+      var linkText = document.createTextNode("This release was downloaded from here");
+      a.appendChild(linkText);
+      a.title = "This release was downloaded from here";
+      a.href = "https://avxhm.se/blogs/Artist14";
+      document.body.appendChild(a);
+    }
+  </script>
+</head>
+ 
+<body>
+  <h2>Mathematica 11.3</h2>
+  <p>  <br/><br/>Input given MathID (xxxx-xxxxx-xxxxx), whatever Activation Key (xxxx-xxxx-xxxxxx) and press Generate.</p>
+  <input type="text" id="str"/>
+  <input type="text" id="act"/>
+  <button onclick="genFromMathId()">Generate</button>
+  <br/>
+  <br/>
+  <div id="output"></div>
+</body>
+ 
+</html>
